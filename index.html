@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Carrefour Étudiant — Burkina Faso</title>
+
+    <!-- PWA -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#0f172a" />
+    <link rel="icon" href="/icons/favicon-32.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon-180.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Carrefour Étudiant" />
+
+    <!-- SEO / partage -->
+    <meta name="description" content="Le réseau qui relie les étudiants de toutes les universités publiques et privées du Burkina Faso." />
+    <meta property="og:title" content="Carrefour Étudiant — Burkina Faso" />
+    <meta property="og:description" content="Forum, opportunités, mentorat et entraide entre étudiants burkinabè." />
+    <meta property="og:type" content="website" />
+
+    <!-- Tailwind via CDN — suffisant pour la production à ce stade -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      * { -webkit-tap-highlight-color: transparent; }
+      body { overscroll-behavior: none; }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
