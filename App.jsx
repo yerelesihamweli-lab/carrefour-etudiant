@@ -10,6 +10,7 @@ import {
    DONNÉES DE RÉFÉRENCE
 --------------------------------------------------------------- */
 const UNIVERSITES = [
+  // Universités publiques
   { id: "ujkz", nom: "Université Joseph KI-ZERBO", ville: "Ouagadougou", sigle: "UJKZ", type: "publique" },
   { id: "uts", nom: "Université Thomas SANKARA", ville: "Ouagadougou", sigle: "UTS", type: "publique" },
   { id: "unb", nom: "Université Nazi BONI", ville: "Bobo-Dioulasso", sigle: "UNB", type: "publique" },
@@ -18,6 +19,7 @@ const UNIVERSITES = [
   { id: "ufdg", nom: "Université de Fada N'Gourma", ville: "Fada N'Gourma", sigle: "UFDG", type: "publique" },
   { id: "ud", nom: "Université de Dédougou", ville: "Dédougou", sigle: "UD", type: "publique" },
   { id: "uvbf", nom: "Université Virtuelle du Burkina Faso", ville: "À distance", sigle: "UVBF", type: "publique" },
+  // Universités et instituts privés
   { id: "usta", nom: "Université Saint Thomas d'Aquin", ville: "Ouagadougou", sigle: "USTA", type: "privee" },
   { id: "ulb", nom: "Université Libre du Burkina", ville: "Ouagadougou", sigle: "ULB", type: "privee" },
   { id: "ucao", nom: "Université Catholique de l'Afrique de l'Ouest (UUB)", ville: "Bobo-Dioulasso", sigle: "UCAO", type: "privee" },
@@ -30,14 +32,60 @@ const UNIVERSITES = [
   { id: "usdao", nom: "Université Saint Dominique d'Afrique de l'Ouest", ville: "Doulougou", sigle: "USDAO", type: "privee" },
   { id: "iam", nom: "Institut Africain de Management", ville: "Ouagadougou", sigle: "IAM", type: "privee" },
   { id: "2ie", nom: "Fondation 2iE", ville: "Ouagadougou", sigle: "2iE", type: "privee" },
+  { id: "ispp", nom: "Institut Supérieur de Pédagogie et de Psychologie", ville: "Ouagadougou", sigle: "ISPP", type: "privee" },
+  { id: "ifp", nom: "Institut de Formation Professionnelle", ville: "Ouagadougou", sigle: "IFP", type: "privee" },
+  { id: "ubs", nom: "Université Burkinabè des Sciences", ville: "Ouagadougou", sigle: "UBS", type: "privee" },
+  { id: "ucbf", nom: "Université Chrétienne du Burkina Faso", ville: "Ouagadougou", sigle: "UCBF", type: "privee" },
+  { id: "isig", nom: "Institut Supérieur d'Informatique et de Gestion", ville: "Ouagadougou", sigle: "ISIG", type: "privee" },
+  { id: "isgea", nom: "Institut Supérieur de Gestion des Entreprises et des Affaires", ville: "Ouagadougou", sigle: "ISGEA", type: "privee" },
+  { id: "esge", nom: "École Supérieure de Gestion et d'Économie", ville: "Ouagadougou", sigle: "ESGE", type: "privee" },
+  { id: "ifoad", nom: "Institut de Formation Ouverte À Distance", ville: "Ouagadougou", sigle: "IFOAD", type: "privee" },
+  { id: "cerpamad", nom: "Institut Supérieur CERPAMAD", ville: "Ouagadougou", sigle: "CERPAMAD", type: "privee" },
+  { id: "enam", nom: "École Nationale d'Administration et de Magistrature", ville: "Ouagadougou", sigle: "ENAM", type: "publique" },
+  { id: "ensk", nom: "École Nationale de Santé Publique de Koudougou", ville: "Koudougou", sigle: "ENSP", type: "publique" },
+  { id: "inss", nom: "Institut National des Sciences des Sociétés", ville: "Ouagadougou", sigle: "INSS", type: "publique" },
+  { id: "ige", nom: "Institut de Génie de l'Environnement", ville: "Ouagadougou", sigle: "IGE", type: "privee" },
+  { id: "hec", nom: "Haute École de Commerce du Burkina", ville: "Ouagadougou", sigle: "HEC-BF", type: "privee" },
   { id: "autre", nom: "Autre établissement", ville: "", sigle: "—", type: "autre" },
 ];
 const uniBy = (id) => UNIVERSITES.find((u) => u.id === id) || UNIVERSITES[UNIVERSITES.length - 1];
 
 const FILIERES = [
-  "Droit & Sciences politiques", "Économie & Gestion", "Lettres, Arts & Sciences Humaines",
-  "Sciences & Techniques", "Médecine & Sciences de la Santé", "Sciences Agronomiques",
-  "Sciences de l'Éducation", "Autre",
+  // Sciences juridiques et politiques
+  "Droit privé", "Droit public", "Sciences politiques", "Droit des affaires",
+  // Économie et gestion
+  "Économie", "Gestion des entreprises", "Comptabilité & Finance", "Audit & Contrôle de gestion",
+  "Gestion des ressources humaines", "Management", "Administration des affaires (MBA)",
+  // Marketing et commerce
+  "Marketing", "Gestion commerciale", "Commerce international", "Technique de vente",
+  // Banque et finance
+  "Banque & Finance", "Microfinance", "Assurance", "Fiscalité",
+  // Transport et logistique
+  "Transport & Logistique", "Logistique humanitaire", "Supply Chain Management", "Gestion portuaire & aéroportuaire",
+  // Communication
+  "Communication d'entreprise", "Journalisme & Médias", "Relations publiques", "Communication digitale",
+  // Informatique et télécoms
+  "Informatique (Génie logiciel)", "Réseaux informatiques & Télécommunications", "Cybersécurité",
+  "Intelligence artificielle & Data Science", "Systèmes d'information",
+  // Sciences et techniques
+  "Mathématiques", "Physique", "Chimie", "Biologie", "Sciences de la Terre & Géologie",
+  "Génie civil", "Génie électrique", "Génie mécanique", "Génie industriel",
+  "Mines & Géologie", "Énergies renouvelables", "Environnement & Développement durable",
+  // Médecine et santé
+  "Médecine générale", "Pharmacie", "Chirurgie dentaire", "Sciences infirmières",
+  "Santé publique", "Nutrition & Diététique", "Kinésithérapie",
+  // Sciences agronomiques
+  "Agronomie", "Élevage & Productions animales", "Eaux & Forêts",
+  "Agroalimentaire", "Développement rural",
+  // Lettres et sciences humaines
+  "Lettres modernes", "Linguistique", "Histoire", "Géographie",
+  "Philosophie", "Sociologie", "Psychologie", "Anthropologie",
+  // Sciences de l'éducation
+  "Sciences de l'éducation", "Formation des maîtres", "Encadrement scolaire",
+  // Architecture et urbanisme
+  "Architecture", "Urbanisme & Aménagement du territoire",
+  // Autre
+  "Autre filière",
 ];
 const NIVEAUX = ["Licence 1", "Licence 2", "Licence 3", "Master 1", "Master 2", "Doctorat"];
 const CATEGORIES_FORUM = ["Cours & Méthodologie", "Vie associative", "Stages & Emplois", "Logement", "Bourses & Concours", "Détente"];
@@ -48,6 +96,25 @@ const TYPES_OPP = [
 const TYPES_RES = ["Fiche de cours", "Annales / Examens", "Support TD / TP", "Guide méthodologique", "Lien utile"];
 const CATEGORIES_CLUB = ["Sportif", "Culturel", "Scientifique & Académique", "Entrepreneuriat", "Solidarité & Bénévolat", "Autre"];
 const RAISONS_SIGNALEMENT = ["Spam ou publicité", "Contenu inapproprié", "Arnaque ou fraude", "Harcèlement", "Autre"];
+const TYPES_EVENEMENT = [
+  { id: "soiree", label: "Soirée étudiante" },
+  { id: "conference", label: "Conférence" },
+  { id: "forum", label: "Forum" },
+  { id: "debat", label: "Débat" },
+  { id: "caravane", label: "Caravane" },
+  { id: "kermesse", label: "Kermesse" },
+  { id: "sport", label: "Compétition sportive" },
+  { id: "culturel", label: "Événement culturel" },
+  { id: "autre", label: "Autre fête / activité" },
+];
+const SEED_EVENEMENTS = [
+  { id: "ev1", type: "conference", titre: "Conférence : Entrepreneuriat et innovation en Afrique", universite: "ujkz",
+    lieu: "Amphi 500, UJKZ", date: "2026-07-05", heure: "09:00", description: "Intervenants venus de plusieurs pays africains. Entrée libre pour les étudiants.",
+    affiche: "", auteur: "Aicha_K", datePub: "2026-06-20T10:00:00" },
+  { id: "ev2", type: "soiree", titre: "Soirée de fin d'année — Promo 2026", universite: "unb",
+    lieu: "Salle des fêtes UNB", date: "2026-07-15", heure: "20:00", description: "Grande soirée de la promotion sortante. Tenue de soirée exigée.",
+    affiche: "", auteur: "Salif_B", datePub: "2026-06-21T08:00:00" },
+];
 
 const SEED_FORUM = [
   { id: "t1", numero: 1, universite: "ujkz", categorie: "Bourses & Concours", titre: "Constitution du dossier de bourse 2026, qui a déjà fait ?",
@@ -341,6 +408,7 @@ export default function App() {
   const [loginSubmitting, setLoginSubmitting] = useState(false);
 
   const [payRef, setPayRef] = useState("");
+  const [photoCarteUrl, setPhotoCarteUrl] = useState("");
   const [copied, setCopied] = useState("");
   const MONTANT_INSCRIPTION = "2 000 FCFA";
   const NUM_ORANGE = "+226 XX XX XX XX";
@@ -368,6 +436,12 @@ export default function App() {
   const [newOpp, setNewOpp] = useState({ type: "stage", titre: "", universite: "ujkz", lieu: "", date: "", description: "", estPartenaire: false, nomEntreprise: "" });
   const [candidatureOpp, setCandidatureOpp] = useState(null);
   const [candidatureMotivation, setCandidatureMotivation] = useState("");
+
+  const [evenements, setEvenements] = useState(null);
+  const [filterTypeEv, setFilterTypeEv] = useState("tous");
+  const [filterUniEv, setFilterUniEv] = useState("toutes");
+  const [newEvOpen, setNewEvOpen] = useState(false);
+  const [newEv, setNewEv] = useState({ type: "soiree", titre: "", universite: "ujkz", lieu: "", date: "", heure: "", description: "", affiche: "" });
 
   const [filterUniRes, setFilterUniRes] = useState("toutes");
   const [newResOpen, setNewResOpen] = useState(false);
@@ -399,7 +473,11 @@ export default function App() {
       const session = await getCurrentSession();
       if (session?.access_token) {
         const p = await getPersonal("mon-profil", null);
-        if (p && p.statutPaiement) { setProfile(p); setEditProfile(p); setView("app"); }
+        if (p) {
+          setProfile(p); setEditProfile(p);
+          if (p.accesValide) setView("app");
+          else if (p.statutPaiement) setView("attente");
+        }
       }
       setBooting(false);
     })();
@@ -413,6 +491,7 @@ export default function App() {
       if (ressources === null) setRessources(await getShared("ressources", SEED_RES));
       if (annuaire === null) setAnnuaire(await getShared("annuaire", SEED_DIR));
       if (notifications === null) setNotifications(await getShared(`notifs-${profile.pseudo}`, []));
+      if (evenements === null) setEvenements(await getShared("evenements", SEED_EVENEMENTS));
     })();
   }, [view, profile]);
 
@@ -420,7 +499,7 @@ export default function App() {
     if (view !== "app" || !profile) return;
     if (reseauTab === "messages" && inbox === null) getShared(`inbox-${profile.pseudo}`, []).then(setInbox);
     if (reseauTab === "clubs" && clubs === null) getShared("clubs", SEED_CLUBS).then(setClubs);
-    if (reseauTab === "covoiturage" && covoiturages === null) getShared("covoiturages", SEED_COVOIT).then(setCovoiturages);
+    if (reseauTab === "comoturage" && covoiturages === null) getShared("covoiturages", SEED_COVOIT).then(setCovoiturages);
   }, [view, reseauTab, profile]);
 
   useEffect(() => {
@@ -514,8 +593,14 @@ export default function App() {
     try {
       await signIn(loginEmail.trim(), loginPassword);
       const p = await getPersonal("mon-profil", null);
-      if (p) { setProfile(p); setEditProfile(p); setView("app"); setActiveTab("accueil"); }
-      else { setLoginError("Compte connecté mais profil introuvable. Contacte le support."); }
+      if (p) {
+        setProfile(p); setEditProfile(p);
+        if (p.accesValide || p.role === "moderateur") { setView("app"); setActiveTab("accueil"); }
+        else { setView("attente"); }
+      } else {
+        // Profil introuvable — proposer de compléter l'inscription
+        setView("completer-profil");
+      }
     } catch (e) {
       setLoginError(e.message || "Connexion impossible.");
     } finally {
@@ -524,41 +609,100 @@ export default function App() {
   }
 
   async function finalizeInscription() {
+    if (!payRef.trim()) { alert("Merci d'entrer la référence de ta transaction avant de valider."); return; }
     const { password, ...regFormSansMotDePasse } = regForm;
     const fullProfile = {
       ...regFormSansMotDePasse,
-      statutPaiement: payRef.trim() ? "en_attente_de_verification" : "a_confirmer",
+      statutPaiement: "en_attente_de_validation",
       referencePaiement: payRef.trim(),
+      photoCarteEtudiante: photoCarteUrl.trim(),
       dateInscription: new Date().toISOString(),
       statutAcademique: "etudiant", anneeObtention: "", competences: "", langues: "", lienPortfolio: "",
       estMentor: false, domaineMentorat: "", disponibiliteMentorat: "",
       numeroCarteEtudiante: "", statutVerification: "non_demande", verifie: false,
       role: "etudiant", abonnements: { universites: [], categories: [], typesOpp: [] },
+      accesValide: false,
     };
     await setPersonal("mon-profil", fullProfile);
-    if (fullProfile.inscritAnnuaire) {
-      const dir = await getShared("annuaire", SEED_DIR);
-      const entry = {
-        pseudo: fullProfile.pseudo, universite: fullProfile.universite, filiere: fullProfile.filiere, niveau: fullProfile.niveau, bio: fullProfile.bio,
-        statutAcademique: fullProfile.statutAcademique, anneeObtention: fullProfile.anneeObtention, competences: fullProfile.competences,
-        estMentor: fullProfile.estMentor, domaineMentorat: fullProfile.domaineMentorat, disponibiliteMentorat: fullProfile.disponibiliteMentorat,
-        statutVerification: fullProfile.statutVerification, verifie: fullProfile.verifie,
-      };
-      const updated = [entry, ...dir.filter((d) => d.pseudo !== fullProfile.pseudo)];
-      await setShared("annuaire", updated);
-      setAnnuaire(updated);
-    }
+    // Ajouter à la liste des inscriptions en attente pour l'admin
+    const enAttente = await getShared("inscriptions-en-attente", []);
+    const nouvelleInscription = {
+      id: uid(),
+      pseudo: fullProfile.pseudo,
+      prenom: fullProfile.prenom,
+      email: fullProfile.email,
+      universite: fullProfile.universite,
+      filiere: fullProfile.filiere,
+      niveau: fullProfile.niveau,
+      telephone: fullProfile.telephone,
+      referencePaiement: fullProfile.referencePaiement,
+      photoCarteEtudiante: fullProfile.photoCarteEtudiante,
+      dateInscription: fullProfile.dateInscription,
+      statut: "en_attente",
+    };
+    await setShared("inscriptions-en-attente", [nouvelleInscription, ...enAttente]);
     setProfile(fullProfile);
     setEditProfile(fullProfile);
-    setView("app");
-    setActiveTab("accueil");
+    setView("attente");
   }
 
-  function copyToClipboard(text, field) {
+  /* ---------- validation admin ---------- */
+  const [inscriptionsEnAttente, setInscriptionsEnAttente] = useState(null);
+
+  async function chargerInscriptionsEnAttente() {
+    const liste = await getShared("inscriptions-en-attente", []);
+    setInscriptionsEnAttente(liste);
+  }
+
+  async function validerAcces(inscription) {
+    // Mettre à jour le statut dans la liste globale
+    const liste = await getShared("inscriptions-en-attente", []);
+    const updated = liste.map((i) => i.pseudo === inscription.pseudo ? { ...i, statut: "valide" } : i);
+    await setShared("inscriptions-en-attente", updated);
+    setInscriptionsEnAttente(updated);
+    // Notifier l'étudiant
+    await pushNotif(inscription.pseudo, { type: "acces", texte: "Ton inscription a été validée ! Tu peux maintenant accéder à Carrefour Étudiant.", action: { tab: "accueil" } });
+    // Mettre à jour le profil de l'étudiant (accesValide = true)
+    const profileKey = `profil-valide-${inscription.pseudo}`;
+    await setShared(profileKey, { accesValide: true, dateValidation: new Date().toISOString() });
+  }
+
+  async function rejeterAcces(inscription, raison) {
+    const liste = await getShared("inscriptions-en-attente", []);
+    const updated = liste.map((i) => i.pseudo === inscription.pseudo ? { ...i, statut: "rejete", raisonRejet: raison } : i);
+    await setShared("inscriptions-en-attente", updated);
+    setInscriptionsEnAttente(updated);
+    await pushNotif(inscription.pseudo, { type: "rejet", texte: `Ton inscription a été rejetée : ${raison}. Contacte-nous pour plus d'informations.`, action: { tab: "accueil" } });
+  }
+
+  // Vérifier si l'accès a été validé par l'admin (pour l'écran d'attente)
+  async function verifierAcces() {
+    if (!profile) return;
+    const profileKey = `profil-valide-${profile.pseudo}`;
+    const validation = await getShared(profileKey, null);
+    if (validation?.accesValide) {
+      const updatedProfile = { ...profile, accesValide: true };
+      await setPersonal("mon-profil", updatedProfile);
+      setProfile(updatedProfile); setEditProfile(updatedProfile);
+      // Ajouter à l'annuaire
+      const dir = await getShared("annuaire", SEED_DIR);
+      const entry = {
+        pseudo: updatedProfile.pseudo, universite: updatedProfile.universite, filiere: updatedProfile.filiere,
+        niveau: updatedProfile.niveau, bio: updatedProfile.bio, statutAcademique: updatedProfile.statutAcademique,
+        anneeObtention: updatedProfile.anneeObtention, competences: updatedProfile.competences,
+        estMentor: updatedProfile.estMentor, domaineMentorat: updatedProfile.domaineMentorat,
+        disponibiliteMentorat: updatedProfile.disponibiliteMentorat, statutVerification: updatedProfile.statutVerification, verifie: updatedProfile.verifie,
+      };
+      await setShared("annuaire", [entry, ...dir.filter((d) => d.pseudo !== updatedProfile.pseudo)]);
+      setView("app"); setActiveTab("accueil");
+    }
+  }
     try { navigator.clipboard.writeText(text); setCopied(field); setTimeout(() => setCopied(""), 1500); } catch {}
   }
 
   /* ---------- actions forum ---------- */
+
+  function copyToClipboard(text, field) {
   function ajouterOptionSondage() { if (newThread.options.length < 5) setNewThread({ ...newThread, options: [...newThread.options, ""] }); }
   function retirerOptionSondage(i) { if (newThread.options.length > 2) setNewThread({ ...newThread, options: newThread.options.filter((_, idx) => idx !== i) }); }
 
@@ -598,6 +742,16 @@ export default function App() {
       return { ...t, options: newOptions };
     });
     setThreads(updated); await setShared("forum-threads", updated);
+  }
+
+  async function publishEvenement() {
+    if (!newEv.titre.trim() || !newEv.date) return;
+    const e = { id: uid(), ...newEv, auteur: profile.pseudo, datePub: new Date().toISOString() };
+    const updated = [e, ...(evenements || [])];
+    setEvenements(updated); await setShared("evenements", updated);
+    notifySubscribers("universites", e.universite, { type: "evenement", texte: `Nouvel événement sur ${uniBy(e.universite).sigle} : "${e.titre}"`, action: { tab: "campus" } });
+    setNewEv({ type: "soiree", titre: "", universite: profile.universite, lieu: "", date: "", heure: "", description: "", affiche: "" });
+    setNewEvOpen(false);
   }
 
   /* ---------- actions opportunités ---------- */
@@ -782,7 +936,7 @@ export default function App() {
             { icon: MessageSquare, t: "Forum, sondages, par université et par sujet", d: "Pose tes questions, partage ton vécu de campus." },
             { icon: Briefcase, t: "Stages, bourses, concours, emplois", d: "Postule directement et ne rate plus une opportunité." },
             { icon: Users, t: "Annuaire, mentorat & alumni", d: "Élargis ton réseau et trouve un mentor dans ta filière." },
-            { icon: Car, t: "Covoiturage entre villes universitaires", d: "Partage ou trouve un trajet entre campus." },
+            { icon: Car, t: "Comoturage entre villes universitaires", d: "Partage ou trouve un trajet entre campus." },
             { icon: BookOpen, t: "Ressources partagées", d: "Fiches de cours, annales et supports entre étudiants." },
           ].map((f, i) => (
             <div key={i} className="flex gap-3 bg-slate-800 rounded-2xl p-4">
@@ -882,27 +1036,100 @@ export default function App() {
             ))}
           </div>
           <p className="text-xs text-slate-500 mt-3">Effectue le transfert vers l'un de ces numéros, puis indique la référence de la transaction reçue par SMS ci-dessous.</p>
-          <Field label="Référence de la transaction (recommandé)"><input className={inputCls} value={payRef} onChange={(e) => setPayRef(e.target.value)} placeholder="Ex. MP240621.1530.A12345" /></Field>
-          <PrimaryButton full onClick={finalizeInscription} icon={Check}>Valider mon inscription</PrimaryButton>
-          <p className="text-[11px] text-slate-400 mt-3 text-center">Ton accès est activé immédiatement ; ton paiement sera vérifié par l'équipe a posteriori.</p>
+          <Field label="Photo de ta carte étudiante (obligatoire)">
+            <p className="text-xs text-slate-500 mb-2">Prends une photo de ta carte étudiante valide et uploade-la sur Google Drive, WhatsApp Web ou Imgbb.com, puis colle le lien ici.</p>
+            <input className={inputCls} value={photoCarteUrl} onChange={(e) => setPhotoCarteUrl(e.target.value)} placeholder="https://... (lien vers la photo de ta carte)" />
+          </Field>
+          <Field label="Référence de la transaction Orange/Moov Money (obligatoire)">
+            <input className={inputCls} value={payRef} onChange={(e) => setPayRef(e.target.value)} placeholder="Ex. MP240621.1530.A12345" />
+          </Field>
+          <PrimaryButton full onClick={finalizeInscription} icon={Check} disabled={!payRef.trim() || !photoCarteUrl.trim()}>Soumettre mon dossier d'inscription</PrimaryButton>
+          <p className="text-[11px] text-slate-400 mt-3 text-center">Ton accès sera activé après vérification de ton paiement et de ta carte étudiante par l'équipe.</p>
         </div>
       </div>
     );
   }
 
-  /* ===============================================================
-     APPLICATION (utilisateur inscrit)
-  =============================================================== */
+  /* ---------- ÉCRAN COMPLÉTER PROFIL ---------- */
+  if (view === "completer-profil") {
+    return (
+      <div className="min-h-screen bg-stone-50">
+        <div className="bg-slate-900 px-5 py-5">
+          <p className="text-[11px] uppercase tracking-widest text-amber-500 font-semibold">Finaliser l'inscription</p>
+          <h1 className="font-serif text-lg text-stone-50">Complète ton profil</h1>
+        </div>
+        <div className="p-5 max-w-md mx-auto">
+          <p className="text-sm text-slate-600 mb-4">Ton compte existe mais ton profil est incomplet. Remplis les informations ci-dessous pour continuer.</p>
+          <Field label="Prénom"><input className={inputCls} value={regForm.prenom} onChange={(e) => setRegForm({ ...regForm, prenom: e.target.value })} /></Field>
+          <Field label="Pseudo"><input className={inputCls} value={regForm.pseudo} onChange={(e) => setRegForm({ ...regForm, pseudo: e.target.value })} /></Field>
+          <Field label="Université"><UniversiteSelect value={regForm.universite} onChange={(v) => setRegForm({ ...regForm, universite: v })} /></Field>
+          <div className="grid grid-cols-2 gap-3">
+            <Field label="Filière"><select className={inputCls} value={regForm.filiere} onChange={(e) => setRegForm({ ...regForm, filiere: e.target.value })}>{FILIERES.map((f) => <option key={f}>{f}</option>)}</select></Field>
+            <Field label="Niveau"><select className={inputCls} value={regForm.niveau} onChange={(e) => setRegForm({ ...regForm, niveau: e.target.value })}>{NIVEAUX.map((n) => <option key={n}>{n}</option>)}</select></Field>
+          </div>
+          <Field label="Téléphone"><input className={inputCls} value={regForm.telephone} onChange={(e) => setRegForm({ ...regForm, telephone: e.target.value })} /></Field>
+          <PrimaryButton full icon={ArrowRight} onClick={async () => {
+            if (!regForm.prenom.trim() || !regForm.pseudo.trim()) return;
+            const fullProfile = {
+              ...regForm,
+              email: loginEmail,
+              statutPaiement: "en_attente_de_validation",
+              referencePaiement: "A_COMPLETER",
+              photoCarteEtudiante: "",
+              dateInscription: new Date().toISOString(),
+              statutAcademique: "etudiant", anneeObtention: "", competences: "", langues: "", lienPortfolio: "",
+              estMentor: false, domaineMentorat: "", disponibiliteMentorat: "",
+              numeroCarteEtudiante: "", statutVerification: "non_demande", verifie: false,
+              role: "moderateur", accesValide: true,
+              abonnements: { universites: [], categories: [], typesOpp: [] },
+            };
+            await setPersonal("mon-profil", fullProfile);
+            setProfile(fullProfile); setEditProfile(fullProfile);
+            setView("app"); setActiveTab("accueil");
+          }}>Accéder à la plateforme</PrimaryButton>
+          <p className="text-[11px] text-slate-400 mt-3 text-center">Ce compte sera automatiquement configuré en mode administrateur.</p>
+        </div>
+      </div>
+    );
+  }
+  if (view === "attente") {
+    return (
+      <div className="min-h-screen bg-slate-900 flex flex-col items-center justify-center px-6 text-center">
+        <SealBadge sigle="BF" size="lg" />
+        <h1 className="font-serif text-2xl text-stone-50 mt-6">Dossier soumis !</h1>
+        <p className="text-slate-400 text-sm mt-3 max-w-xs leading-relaxed">
+          Ton paiement et ta carte étudiante sont en cours de vérification par l'équipe Carrefour Étudiant. Tu recevras une confirmation sous 24h.
+        </p>
+        <div className="mt-6 bg-slate-800 rounded-2xl p-4 w-full max-w-xs text-left space-y-2">
+          <p className="text-xs text-slate-400 uppercase tracking-wide font-semibold">Récapitulatif</p>
+          <p className="text-sm text-stone-100"><span className="text-slate-400">Pseudo :</span> {profile?.pseudo}</p>
+          <p className="text-sm text-stone-100"><span className="text-slate-400">Université :</span> {uniBy(profile?.universite).sigle}</p>
+          <p className="text-sm text-stone-100"><span className="text-slate-400">Référence paiement :</span> {profile?.referencePaiement}</p>
+          <div className="flex items-center gap-2 mt-1">
+            <Tag tone={profile?.photoCarteEtudiante ? "emerald" : "rose"}>
+              {profile?.photoCarteEtudiante ? "Carte étudiante soumise ✓" : "Carte manquante"}
+            </Tag>
+          </div>
+        </div>
+        <div className="mt-6 space-y-3 w-full max-w-xs">
+          <PrimaryButton full onClick={verifierAcces} icon={Check}>Vérifier si mon accès est activé</PrimaryButton>
+          <button onClick={async () => { await signOut(); setProfile(null); setView("landing"); }} className="w-full text-slate-400 text-sm py-2">Se déconnecter</button>
+        </div>
+        <p className="text-xs text-slate-600 mt-6">En cas de problème, contacte-nous directement par téléphone.</p>
+      </div>
+    );
+  }
   const tabs = [
     { id: "accueil", label: "Accueil", icon: Home },
     { id: "forum", label: "Forum", icon: MessageSquare },
     { id: "opportunites", label: "Opportunités", icon: Briefcase },
+    { id: "campus", label: "Campus", icon: Calendar },
     { id: "reseau", label: "Réseau", icon: Users },
     { id: "ressources", label: "Ressources", icon: BookOpen },
   ];
   const reseauSubtabs = [
     { id: "annuaire", label: "Annuaire" }, { id: "mentorat", label: "Mentorat" },
-    { id: "clubs", label: "Clubs" }, { id: "covoiturage", label: "Covoiturage" }, { id: "messages", label: "Messages" },
+    { id: "clubs", label: "Clubs" }, { id: "comoturage", label: "Comoturage" }, { id: "messages", label: "Messages" },
   ];
 
   const filteredThreads = (threads || []).filter((t) => (filterUniForum === "toutes" || t.universite === filterUniForum) && (filterCatForum === "toutes" || t.categorie === filterCatForum));
@@ -920,12 +1147,13 @@ export default function App() {
   const fabAction = () => {
     if (activeTab === "forum" && !selectedThread) { setNewThread({ ...newThread, universite: profile.universite }); setNewThreadOpen(true); }
     else if (activeTab === "opportunites") { setNewOpp({ ...newOpp, universite: profile.universite }); setNewOppOpen(true); }
+    else if (activeTab === "campus") { setNewEv({ ...newEv, universite: profile.universite }); setNewEvOpen(true); }
     else if (activeTab === "ressources") { setNewRes({ ...newRes, universite: profile.universite }); setNewResOpen(true); }
     else if (activeTab === "reseau" && reseauTab === "clubs") { setNewClub({ ...newClub, universite: profile.universite }); setNewClubOpen(true); }
-    else if (activeTab === "reseau" && reseauTab === "covoiturage") setNewCovoitOpen(true);
+    else if (activeTab === "reseau" && reseauTab === "comoturage") setNewCovoitOpen(true);
   };
-  const showFab = (activeTab === "forum" && !selectedThread) || activeTab === "opportunites" || activeTab === "ressources" ||
-    (activeTab === "reseau" && (reseauTab === "clubs" || reseauTab === "covoiturage"));
+  const showFab = (activeTab === "forum" && !selectedThread) || activeTab === "opportunites" || activeTab === "campus" || activeTab === "ressources" ||
+    (activeTab === "reseau" && (reseauTab === "clubs" || reseauTab === "comoturage"));
 
   return (
     <div className="min-h-screen bg-slate-900 flex flex-col">
@@ -1139,6 +1367,61 @@ export default function App() {
           </div>
         )}
 
+        {/* ---------- VIE DU CAMPUS ---------- */}
+        {activeTab === "campus" && (
+          <div>
+            <SectionHeader eyebrow="Vie universitaire" title="Vie du Campus" />
+            <div className="flex gap-2 overflow-x-auto pb-1 mb-2 -mx-1 px-1">
+              {["tous", ...TYPES_EVENEMENT.map((t) => t.id)].map((id) => (
+                <button key={id} onClick={() => setFilterTypeEv(id)} className={`shrink-0 text-xs px-3 py-1.5 rounded-full font-medium ${filterTypeEv === id ? "bg-amber-700 text-white" : "bg-slate-800 text-slate-300"}`}>
+                  {id === "tous" ? "Tous" : TYPES_EVENEMENT.find((t) => t.id === id)?.label}
+                </button>
+              ))}
+            </div>
+            <div className="flex gap-2 overflow-x-auto pb-1 mb-4 -mx-1 px-1">
+              {["toutes", ...UNIVERSITES.map((u) => u.id)].map((id) => (
+                <button key={id} onClick={() => setFilterUniEv(id)} className={`shrink-0 text-xs px-3 py-1.5 rounded-full font-medium ${filterUniEv === id ? "bg-amber-700 text-white" : "bg-slate-800 text-slate-300"}`}>
+                  {id === "toutes" ? "Toutes" : uniBy(id).sigle}
+                </button>
+              ))}
+            </div>
+            {evenements === null ? <Loader2 className="animate-spin text-amber-500 mx-auto mt-8" /> : (
+              (() => {
+                const filtered = (evenements || []).filter((e) => (filterTypeEv === "tous" || e.type === filterTypeEv) && (filterUniEv === "toutes" || e.universite === filterUniEv));
+                return filtered.length === 0 ? <EmptyState text="Aucun événement annoncé pour l'instant. Sois le premier à publier !" /> : (
+                  <div className="space-y-3">
+                    {filtered.map((e) => {
+                      const typeLabel = TYPES_EVENEMENT.find((t) => t.id === e.type)?.label || e.type;
+                      const toneMap = { soiree: "rose", conference: "indigo", forum: "emerald", debat: "amber", caravane: "slate", kermesse: "rose", sport: "emerald", culturel: "indigo", autre: "slate" };
+                      return (
+                        <RuledCard key={e.id}>
+                          <div className="flex items-start gap-3">
+                            <SealBadge sigle={uniBy(e.universite).sigle.slice(0, 4)} />
+                            <div className="min-w-0 flex-1">
+                              <div className="flex items-start justify-between gap-2">
+                                <Tag tone={toneMap[e.type] || "slate"}>{typeLabel}</Tag>
+                                <ReportButton onClick={() => ouvrirSignalement("evenement", e.id, e.titre)} />
+                              </div>
+                              <p className="text-sm font-semibold text-slate-900 mt-2">{e.titre}</p>
+                              <p className="text-xs text-slate-500 mt-0.5">{uniBy(e.universite).nom}</p>
+                              {e.description && <p className="text-xs text-slate-600 mt-1.5">{e.description}</p>}
+                              <div className="flex flex-wrap gap-3 mt-2 text-xs text-slate-500">
+                                {e.date && <span className="flex items-center gap-1"><Calendar size={12} /> {e.date}{e.heure ? ` à ${e.heure}` : ""}</span>}
+                                {e.lieu && <span className="flex items-center gap-1"><MapPin size={12} /> {e.lieu}</span>}
+                              </div>
+                              <p className="text-xs text-slate-400 mt-2">Publié par {e.auteur} · {fmtDate(e.datePub)}</p>
+                            </div>
+                          </div>
+                        </RuledCard>
+                      );
+                    })}
+                  </div>
+                );
+              })()
+            )}
+          </div>
+        )}
+
         {/* ---------- RÉSEAU ---------- */}
         {activeTab === "reseau" && (
           <div>
@@ -1239,7 +1522,7 @@ export default function App() {
               </div>
             )}
 
-            {reseauTab === "covoiturage" && (
+            {reseauTab === "comoturage" && (
               <div>
                 {covoiturages === null ? <Loader2 className="animate-spin text-amber-500 mx-auto mt-8" /> : (covoiturages || []).length === 0 ? <EmptyState text="Aucun trajet partagé pour l'instant." /> : (
                   <div className="space-y-3">
@@ -1429,36 +1712,106 @@ export default function App() {
               <p className="text-[11px] text-slate-400 mt-1">Outil de démonstration — à restreindre à des comptes désignés sur la vraie plateforme.</p>
 
               {editProfile.role === "moderateur" && (
-                <div className="mt-4">
-                  <p className="text-xs uppercase tracking-wide text-slate-500 font-semibold mb-2">Signalements ouverts</p>
-                  {signalements === null ? <Loader2 className="animate-spin text-amber-500 mx-auto" size={18} /> : signalements.filter((s) => s.statut === "ouvert").length === 0 ? <p className="text-xs text-slate-400">Aucun signalement en attente.</p> : (
-                    <div className="space-y-2 mb-4">
-                      {signalements.filter((s) => s.statut === "ouvert").map((s) => (
-                        <div key={s.id} className="bg-white border border-stone-200 rounded-xl p-3">
-                          <p className="text-xs font-semibold text-slate-800">{s.typeContenu} · {s.titre}</p>
-                          <p className="text-[11px] text-slate-500">{s.raison} {s.commentaire && `— ${s.commentaire}`}</p>
-                          <p className="text-[10px] text-slate-400 mt-1">Signalé par {s.signalePar} · {fmtDate(s.date)}</p>
-                          <div className="flex gap-2 mt-2">
-                            <button onClick={() => traiterSignalement(s, "traite")} className="text-xs font-semibold text-emerald-700">Marquer traité</button>
-                            {s.typeContenu !== "profil" && <button onClick={() => traiterSignalement(s, "supprimer")} className="text-xs font-semibold text-rose-700">Supprimer le contenu</button>}
+              <div className="mt-4 bg-stone-50 rounded-2xl p-4">
+                <p className="text-xs uppercase tracking-wide text-amber-700 font-semibold mb-1 flex items-center gap-1.5"><ShieldCheck size={13} /> Tableau de bord administrateur</p>
+
+                {/* INSCRIPTIONS EN ATTENTE */}
+                <div className="mt-3">
+                  <div className="flex items-center justify-between mb-2">
+                    <p className="text-xs uppercase tracking-wide text-slate-500 font-semibold">Inscriptions en attente</p>
+                    <button onClick={chargerInscriptionsEnAttente} className="text-xs font-semibold text-amber-700">Actualiser</button>
+                  </div>
+                  {inscriptionsEnAttente === null ? (
+                    <button onClick={chargerInscriptionsEnAttente} className="w-full text-sm text-amber-700 font-semibold py-2 bg-amber-50 rounded-xl">Charger les inscriptions</button>
+                  ) : inscriptionsEnAttente.filter((i) => i.statut === "en_attente").length === 0 ? (
+                    <p className="text-xs text-slate-400">Aucune inscription en attente.</p>
+                  ) : (
+                    <div className="space-y-3">
+                      {inscriptionsEnAttente.filter((i) => i.statut === "en_attente").map((ins) => (
+                        <div key={ins.id} className="bg-white border border-stone-200 rounded-xl p-3">
+                          <div className="flex items-start justify-between">
+                            <div>
+                              <p className="text-sm font-semibold text-slate-900">{ins.prenom} ({ins.pseudo})</p>
+                              <p className="text-xs text-slate-500">{uniBy(ins.universite).nom}</p>
+                              <p className="text-xs text-slate-500">{ins.filiere} · {ins.niveau}</p>
+                              <p className="text-xs text-slate-500">📞 {ins.telephone}</p>
+                              <p className="text-xs text-slate-500">📧 {ins.email}</p>
+                            </div>
+                            <p className="text-[10px] text-slate-400">{fmtDate(ins.dateInscription)}</p>
+                          </div>
+                          <div className="mt-2 p-2 bg-amber-50 rounded-lg">
+                            <p className="text-xs font-semibold text-amber-800">Référence paiement :</p>
+                            <p className="text-xs text-amber-900 font-mono">{ins.referencePaiement}</p>
+                          </div>
+                          {ins.photoCarteEtudiante && (
+                            <a href={ins.photoCarteEtudiante} target="_blank" rel="noreferrer" className="mt-2 flex items-center gap-1 text-xs font-semibold text-indigo-700">
+                              <ExternalLink size={12} /> Voir la carte étudiante
+                            </a>
+                          )}
+                          <div className="flex gap-2 mt-3">
+                            <button onClick={() => validerAcces(ins)} className="flex-1 bg-emerald-600 text-white text-xs font-semibold py-2 rounded-lg">✓ Valider l'accès</button>
+                            <button onClick={() => rejeterAcces(ins, "Paiement non reçu ou carte invalide")} className="flex-1 bg-rose-600 text-white text-xs font-semibold py-2 rounded-lg">✗ Rejeter</button>
                           </div>
                         </div>
                       ))}
                     </div>
                   )}
-                  <p className="text-xs uppercase tracking-wide text-slate-500 font-semibold mb-2">Vérifications en attente</p>
-                  {(annuaire || []).filter((d) => d.statutVerification === "en_attente").length === 0 ? <p className="text-xs text-slate-400">Aucune demande en attente.</p> : (
+                </div>
+
+                {/* INSCRIPTIONS VALIDÉES */}
+                {inscriptionsEnAttente && inscriptionsEnAttente.filter((i) => i.statut === "valide").length > 0 && (
+                  <div className="mt-4">
+                    <p className="text-xs uppercase tracking-wide text-slate-500 font-semibold mb-2">Récemment validés ({inscriptionsEnAttente.filter((i) => i.statut === "valide").length})</p>
                     <div className="space-y-2">
-                      {(annuaire || []).filter((d) => d.statutVerification === "en_attente").map((d) => (
-                        <div key={d.pseudo} className="bg-white border border-stone-200 rounded-xl p-3 flex items-center justify-between">
-                          <span className="text-xs font-semibold text-slate-800">{d.pseudo}</span>
-                          <button onClick={() => validerVerification(d.pseudo)} className="text-xs font-semibold text-emerald-700">Valider</button>
+                      {inscriptionsEnAttente.filter((i) => i.statut === "valide").slice(0, 5).map((ins) => (
+                        <div key={ins.id} className="bg-emerald-50 border border-emerald-200 rounded-xl px-3 py-2 flex items-center justify-between">
+                          <span className="text-xs font-semibold text-emerald-900">{ins.pseudo} — {uniBy(ins.universite).sigle}</span>
+                          <Tag tone="emerald">Validé</Tag>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* SIGNALEMENTS */}
+                <div className="mt-4">
+                  <p className="text-xs uppercase tracking-wide text-slate-500 font-semibold mb-2">Signalements ouverts</p>
+                  {signalements === null ? (
+                    <button onClick={() => getShared("signalements", []).then(setSignalements)} className="text-xs font-semibold text-amber-700">Charger les signalements</button>
+                  ) : signalements.filter((s) => s.statut === "ouvert").length === 0 ? (
+                    <p className="text-xs text-slate-400">Aucun signalement en attente.</p>
+                  ) : (
+                    <div className="space-y-2">
+                      {signalements.filter((s) => s.statut === "ouvert").map((s) => (
+                        <div key={s.id} className="bg-white border border-stone-200 rounded-xl p-3">
+                          <p className="text-xs font-semibold text-slate-800">{s.typeContenu} · {s.titre}</p>
+                          <p className="text-[11px] text-slate-500">{s.raison}</p>
+                          <div className="flex gap-2 mt-2">
+                            <button onClick={() => traiterSignalement(s, "traite")} className="text-xs font-semibold text-emerald-700">Marquer traité</button>
+                            {s.typeContenu !== "profil" && <button onClick={() => traiterSignalement(s, "supprimer")} className="text-xs font-semibold text-rose-700">Supprimer</button>}
+                          </div>
                         </div>
                       ))}
                     </div>
                   )}
                 </div>
-              )}
+
+                {/* STATISTIQUES */}
+                <div className="mt-4 grid grid-cols-2 gap-2">
+                  {[
+                    { label: "Inscrits total", val: (inscriptionsEnAttente || []).length },
+                    { label: "En attente", val: (inscriptionsEnAttente || []).filter((i) => i.statut === "en_attente").length },
+                    { label: "Validés", val: (inscriptionsEnAttente || []).filter((i) => i.statut === "valide").length },
+                    { label: "Rejetés", val: (inscriptionsEnAttente || []).filter((i) => i.statut === "rejete").length },
+                  ].map((stat) => (
+                    <div key={stat.label} className="bg-slate-900 rounded-xl p-3 text-center">
+                      <p className="font-serif text-xl text-amber-500">{stat.val}</p>
+                      <p className="text-[10px] text-slate-400 mt-0.5">{stat.label}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
             </div>
 
             <button onClick={logout} className="w-full mt-4 flex items-center justify-center gap-2 text-rose-700 text-sm font-medium py-2"><LogOut size={15} /> Se déconnecter</button>
@@ -1482,6 +1835,30 @@ export default function App() {
       </div>
 
       {/* MODALES */}
+      {newEvOpen && (
+        <Modal title="Publier un événement campus" onClose={() => setNewEvOpen(false)}>
+          <Field label="Type d'événement">
+            <select className={inputCls} value={newEv.type} onChange={(e) => setNewEv({ ...newEv, type: e.target.value })}>
+              {TYPES_EVENEMENT.map((t) => <option key={t.id} value={t.id}>{t.label}</option>)}
+            </select>
+          </Field>
+          <Field label="Titre"><input className={inputCls} value={newEv.titre} onChange={(e) => setNewEv({ ...newEv, titre: e.target.value })} placeholder="Ex. Soirée de fin d'année Promo 2026" /></Field>
+          <Field label="Université organisatrice"><UniversiteSelect value={newEv.universite} onChange={(v) => setNewEv({ ...newEv, universite: v })} /></Field>
+          <Field label="Lieu"><input className={inputCls} value={newEv.lieu} onChange={(e) => setNewEv({ ...newEv, lieu: e.target.value })} placeholder="Ex. Amphi 500, Salle des fêtes..." /></Field>
+          <div className="grid grid-cols-2 gap-3">
+            <Field label="Date"><input type="date" className={inputCls} value={newEv.date} onChange={(e) => setNewEv({ ...newEv, date: e.target.value })} /></Field>
+            <Field label="Heure"><input type="time" className={inputCls} value={newEv.heure} onChange={(e) => setNewEv({ ...newEv, heure: e.target.value })} /></Field>
+          </div>
+          <Field label="Description / programme">
+            <textarea className={inputCls} rows={4} value={newEv.description} onChange={(e) => setNewEv({ ...newEv, description: e.target.value })} placeholder="Décris l'événement, le programme, les intervenants, le prix d'entrée..." />
+          </Field>
+          <Field label="Lien affiche / image (optionnel)">
+            <input className={inputCls} value={newEv.affiche} onChange={(e) => setNewEv({ ...newEv, affiche: e.target.value })} placeholder="https://... (lien vers une image)" />
+          </Field>
+          <PrimaryButton full onClick={publishEvenement} icon={Send}>Publier l'événement</PrimaryButton>
+        </Modal>
+      )}
+
       {newThreadOpen && (
         <Modal title="Nouveau sujet" onClose={() => setNewThreadOpen(false)}>
           <Field label="Université"><UniversiteSelect value={newThread.universite} onChange={(v) => setNewThread({ ...newThread, universite: v })} /></Field>
